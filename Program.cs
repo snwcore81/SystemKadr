@@ -12,9 +12,11 @@ namespace SystemKadr
     {
         static void Main(string[] args)
         {
+            Loger.SetOutput(new FileLogWriter("logapp.txt"));
+
             using var log = Loger.Create<Program>("Main");
 
-            Menu m = new(new MenuItem[] 
+            MenuComponent m = new(new MenuItem[] 
             { 
                 new(1, "Opcja testowa 1", ConsoleKey.F1), 
                 new(2, "Opcja test"),

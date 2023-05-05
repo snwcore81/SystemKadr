@@ -8,7 +8,7 @@ using SystemKadr.Common.Log;
 
 namespace SystemKadr.Common.Menu
 {
-    public class Menu
+    public class MenuComponent
     {
         private List<MenuItem> _items;
         private int _maximumWidth;
@@ -29,17 +29,17 @@ namespace SystemKadr.Common.Menu
         public ItemColor NotSelected { get; set; } = new() { Background = ConsoleColor.Gray, Foreground = ConsoleColor.Black };
         public ItemColor Selected { get; set; } = new() { Background = ConsoleColor.Red, Foreground = ConsoleColor.White };
 
-        public Menu()
+        public MenuComponent()
         {
-            using var log = Loger.Create<Menu>("Menu");
+            using var log = Loger.Create<MenuComponent>("Menu");
 
             _items = new();
             _maximumWidth = 0;
         }
 
-        public Menu(MenuItem[] items) : this()
+        public MenuComponent(MenuItem[] items) : this()
         {
-            using var log = Loger.Create<Menu>("Menu(MenuItem[] items)");
+            using var log = Loger.Create<MenuComponent>("Menu(MenuItem[] items)");
 
             _items.AddRange(items);
             _maximumWidth = _items.Max(x => x.Name.Length) + MenuItem.KeyItemWidth;
@@ -68,7 +68,7 @@ namespace SystemKadr.Common.Menu
 
         public int Select((int x, int y) position, bool autoEnter = false)
         {
-            using var log = Loger.Create<Menu>("Select");
+            using var log = Loger.Create<MenuComponent>("Select");
 
             do
             {
