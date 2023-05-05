@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 using SystemKadr.Common;
-using SystemKadr.Common.Log;
+using SystemKadr.Common.Logging;
 using SystemKadr.Common.Menu;
 using SystemKadr.Model;
 

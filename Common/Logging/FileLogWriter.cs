@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SystemKadr.Common.Interface;
 
-namespace SystemKadr.Common.Log
+namespace SystemKadr.Common.Logging
 {
     public class FileLogWriter : ILogWriter
     {
