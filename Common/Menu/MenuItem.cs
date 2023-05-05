@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemKadr.Common
+namespace SystemKadr.Common.Menu
 {
     public class MenuItem
     {
@@ -12,8 +12,8 @@ namespace SystemKadr.Common
 
         public int Id { get; private set; }
         public string Name { get; private set; }
-        public ConsoleKey? Key { get; private set; } 
-        public MenuItem(int Id,string Name, ConsoleKey? Key = null)
+        public ConsoleKey? Key { get; private set; }
+        public MenuItem(int Id, string Name, ConsoleKey? Key = null)
         {
             this.Id = Id;
             this.Name = Name;

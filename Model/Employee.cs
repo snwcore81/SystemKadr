@@ -5,9 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using SystemKadr.Common;
+using SystemKadr.Common.Log;
 
 namespace SystemKadr.Model
-{    
+{
     public class Employee : XmlSerializer<Employee>
     {
         [DataMember]

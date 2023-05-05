@@ -4,8 +4,9 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemKadr.Common.Log;
 
-namespace SystemKadr.Common
+namespace SystemKadr.Common.Menu
 {
     public class Menu
     {
@@ -40,8 +41,8 @@ namespace SystemKadr.Common
         {
             using var log = Loger.Create<Menu>("Menu(MenuItem[] items)");
 
-            this._items.AddRange(items);
-            this._maximumWidth = this._items.Max(x => x.Name.Length) + MenuItem.KeyItemWidth;
+            _items.AddRange(items);
+            _maximumWidth = _items.Max(x => x.Name.Length) + MenuItem.KeyItemWidth;
         }
 
         public void Draw((int x, int y) position)
@@ -58,7 +59,7 @@ namespace SystemKadr.Common
                     NotSelected.Set();
 
                 Console.SetCursorPosition(position.x, position.y + itemIndex);
-                Console.WriteLine(item.ToString().PadRight(_maximumWidth,' '));
+                Console.WriteLine(item.ToString().PadRight(_maximumWidth, ' '));
             }
 
             Console.ResetColor();

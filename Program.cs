@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Text;
 using SystemKadr.Common;
+using SystemKadr.Common.Log;
+using SystemKadr.Common.Menu;
 using SystemKadr.Model;
 
 namespace SystemKadr
@@ -40,7 +42,13 @@ namespace SystemKadr
                     throw new DataInput.DataInputException("Niepoprawna wartosc! Ma byc z przedzialu 1-10");
             });
 
-            Console.WriteLine(output);
+            var output1 = DataInput.Get<float>("Wprowadz float:", "Podales niepoprawna wartosc", (x) =>
+            {
+                if (x < 100.0f)
+                    throw new DataInput.DataInputException("Niepoprawna wartosc! Ma byc wieksze od 100!");
+            });
+
+            Console.WriteLine($"o1={output} o2={output1}");
         }
     }
 }
