@@ -10,6 +10,8 @@ namespace SystemKadr
     {
         static void Main(string[] args)
         {
+            using var log = Loger.Create<Program>("Main");
+
             Menu m = new(new MenuItem[] 
             { 
                 new(1, "Opcja testowa 1", ConsoleKey.F1), 
@@ -19,8 +21,6 @@ namespace SystemKadr
             });
 
             Console.WriteLine(m.Select((1, 4), true));
-
-            using var log = Loger.Create<Program>("Main");
 
             Employee e1 = new();
             e1.Name = "Jacek";
@@ -33,6 +33,14 @@ namespace SystemKadr
             e.ReadObject(data.AsStream());
 
             Console.WriteLine(e);
+
+            var output = DataInput.Get<int>("Wprowadz int:","Podales niepoprawna wartosc", (x) =>
+            {
+                if (x < 0 || x > 10)
+                    throw new DataInput.DataInputException("Niepoprawna wartosc! Ma byc z przedzialu 1-10");
+            });
+
+            Console.WriteLine(output);
         }
     }
 }

@@ -67,6 +67,8 @@ namespace SystemKadr.Common
 
         public int Select((int x, int y) position, bool autoEnter = false)
         {
+            using var log = Loger.Create<Menu>("Select");
+
             do
             {
                 Draw(position);
