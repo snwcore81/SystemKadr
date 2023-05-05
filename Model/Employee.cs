@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using SystemKadr.Common;
-using SystemKadr.Common.Log;
+using SystemKadr.Common.Logging;
 
 namespace SystemKadr.Model
 {
